@@ -1,17 +1,65 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% load thumbnail %}
 {% block content %}
 
+<section class="first-section">
 <div class="container text-center all-text-index">
- <h1 class="title-index">Космическое агентство</h1>
-<div class="text-index">
-    Национальное управление по аэронавтике и исследованию космического
-    пространства — ведомство, относящееся к федеральному правительству
-    США и подчиняющееся непосредственно президенту США.
+    <div class="row justify-content-center">
+        <div class="col-12 title-index pb-2">Космическое агентство</div>
+        <div class="col-12 text-index px-2 pb-5">
+            Национальное управление по аэронавтике и исследованию космического
+            пространства — ведомство, относящееся к федеральному правительству
+            США и подчиняющееся непосредственно президенту США.
+        </div>
+    </div>
 </div>
+<div class="container text-center img-index">
+    <div class="row d-flex align-items-center">
+        <div class="col-lg-6 col-sm-12 py-5">
+            <div class="row">
+                <div class="col-6 p-3"><img src="{% static 'img/shuttle-space.png' %}" class="img-shuttle" alt="shuttle"></div>
+                <div class="col-6 p-3"><img src="{% static 'img/telescope.png' %}" class="img-telescope" alt="telescope"></div>
+                <div class="col-6 p-3 img-text">Спейс шаттлы — пилотируемые корабли</div>       
+                <div class="col-6 p-3 img-text">Лучшее телескопическое оборудование</div>
+                <div class="col-6 p-3 "><img src="{% static 'img/moon-stars-fill.png' %}" class="img-moon" alt="moon"></div>
+                <div class="col-6 p-3"><img src="{% static 'img/medal.png' %}" class="img-medal" alt="medal"></div>
+                <div class="col-6 p-3 img-text">Целимся на Луну и Марс</div>
+                <div class="col-6 p-3 img-text">Золотая медаль по научным исследованиям</div>
+            </div>
+        </div>
+        {% thumbnail slider.last.image "457x457" crop="center" as img_cosmos %}
+        <div class="col-lg-6 col-sm-12">
+            <img src="{{ img_cosmos.url }}" class="img-fluid img-cosmos" alt="cosmos">
+        </div>
+    </div>
 </div>
+</section>
 
+<section class="second-section">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-12 text-photos" id='photos'>Фотографии</div>
+            <div class="slider-main">
+                {% for image in slider %}
+                <div>
+                    {% thumbnail image.image "750x420" crop as sl %}                
+                    <button type="button" class="btn border-0" data-bs-toggle="modal" data-bs-target="#fullImgModal" data-bs-full-src="{{ image.image.url }}">
+                        <img src="{{ sl.url }}" class="img-fluid my-lg-5 preview-img" alt="{{ image.name }}">
+                    </button>                 
+                </div>
+                {% endfor %}
+            </div>
+        <div class="slider-images my-3">
+            {% for image in slider %}
+            <div class="slider-item">
+                {% thumbnail image.image "165x165" crop="center" as sl_img %}
+                <img src="{{ sl_img.url }}" class="img-fluid slider-item-image" alt="{{ image.name }}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</section>
+{% include 'includes/modal.html' %}    
 {% endblock content %}
-
-
-

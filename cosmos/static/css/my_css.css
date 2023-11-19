@@ -5,16 +5,31 @@
   
 body,
 header {
-font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
 
+.first-section {
+    background-color: #FAFAFA;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.second-section {
+    background-color: #3C3C3C;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    /* height: 100vh; */
 }
 
 .navbar {
     background-color: rgb(0, 0, 0);
-    /* padding-left: 150px; */
-    /* padding-right: 150px; */
     gap: 30px;
-    height: 90px;
+    min-height: 90px;
+}
+
+.img-nasa {
+    width: 120px;
+    height: 34px;
 }
 
 .navbar-toggler {
@@ -70,6 +85,7 @@ font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 56px;
     letter-spacing: 0.02em;
+    max-width: 751px;
 }
 
 .text-index {
@@ -78,10 +94,107 @@ font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.02em;
     line-height: 30px;
     color: #3C3C3C;
-    text-overflow: ellipsis;
+    max-width: 751px;
 }
 
-.all-text-index {
-    margin-top: 90px;
-    gap: 30px;
+.img-index {
+    gap: 127px;
+}
+
+.img-shuttle,
+.img-telescope,
+.img-moon,
+.img-medal {
+    width: 64px;
+    height: 64px;
+}
+
+.img-cosmos {
+    border-radius: 40px;
+    margin: auto;
+}
+
+.img-text {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 26px;
+}
+
+.text-photos {
+    font-size: 42px;
+    color: #FFFFFF;
+    letter-spacing: 0.02em;
+    font-weight: 700;
+}
+
+.slider-images img {
+    border-radius: 20%;
+    margin: 0 auto;
+}
+
+.slider-main img {
+    border-radius: 40px;
+    margin: auto;
+}
+
+.slick-slide.slick-center img{
+    border: 1px solid white;
+}
+
+.control-c {
+    width: 56px;
+    height: 56px;
+}
+
+img.slick-next {
+    right: -60px;
+}
+
+img.slick-prev {
+    left: -60px;
+}
+
+.slider-images.slick-initialized.slick-slider {
+    width: 75%;
+    text-align: center;
+}
+
+.slider-item {
+    margin-left: 30px;
+}
+
+.full-img {
+    object-fit: contain !important;
+}
+
+@media (max-width: 768px) {
+    .title-index {
+        font-size: 36px;
+    }
+    .text-index {
+        font-size: 16px;
+    }
+    .img-nasa{
+        width: 80px;
+        height: 23px;
+    }
+    .navbar {
+        min-height: 70px;
+    }
+    .slider-main {
+        margin: 0%;
+    }
+    .preview-img {
+        width: 340px;
+        height: 340px;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        object-fit: cover;
+    }
+    .slider-item-image {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
 }

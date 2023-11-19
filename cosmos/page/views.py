@@ -1,5 +1,10 @@
-from django.views.generic import TemplateView
+from django.views.generic import ListView
+
+from .models import Slider
 
 
-class HomePageView(TemplateView):
+class HomePageView(ListView):
+    model = Slider
     template_name = 'page/index.html'
+    context_object_name = 'slider'
+

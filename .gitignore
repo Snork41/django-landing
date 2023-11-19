@@ -1,3 +1,7 @@
+photos/
+filer_public/
+filer_public_thumbnails/
+media/*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
