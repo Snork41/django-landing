@@ -18,7 +18,6 @@ header {
     background-color: #3C3C3C;
     padding-top: 90px;
     padding-bottom: 90px;
-    /* height: 100vh; */
 }
 
 .navbar {
@@ -168,6 +167,10 @@ img.slick-prev {
     object-fit: contain !important;
 }
 
+.modal-body-carousel {
+    background-color: black;
+}
+  
 @media (max-width: 768px) {
     .title-index {
         font-size: 36px;
