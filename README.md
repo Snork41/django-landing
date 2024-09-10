@@ -1,4 +1,4 @@
-# test-van
+# django-landing
 
 ### Tехнологии:
 - python 3.9
